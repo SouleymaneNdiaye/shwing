@@ -1,0 +1,10 @@
+
+node_modules/
+
+node_modules/cordova-android/
+
+platforms/
+
+res/
+
+plugins/

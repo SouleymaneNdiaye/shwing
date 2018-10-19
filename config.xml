@@ -23,5 +23,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-media" spec="^5.0.2" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <engine name="android" spec="^7.1.1" />
 </widget>

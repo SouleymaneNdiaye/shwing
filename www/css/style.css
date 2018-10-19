@@ -29,3 +29,19 @@ body{
     border-radius: 8px;
     font-size: 16px;
 }
+
+.btn-primary{
+	position: absolute;
+	top: 80%;
+	left: 25%;
+
+	background-color: #03DAC6; /* Green */
+    border: none;
+    width: 40%;
+    color: white;
+    padding: 5% 5%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+}

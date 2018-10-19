@@ -1,22 +1,24 @@
 
+document.addEventListener('deviceready', onDeviceReady, false);
 
-document.getElementById('shwing').addEventListener('click', function(){
-    console.log('im on it');
-            // Play the audio file at url
-    var my_media = new Media('img/shwing/shwing.wav',
-        // success callback
-        function() {
-            console.log("playAudio():Audio Success");
-        },
-        // error callback
-        function(err) {
-            console.log("playAudio():Audio Error: "+err);
-    });
+function onDeviceReady() {
+   document.querySelector('#shwing').addEventListener("touchend", playMP3, false);
+};
 
-    // Play audio
-    my_media.play();
-});
+
+function playMP3(src) {
+    var mp3URL = "/assets/www/sounds/shwing.mp3";
+    var media = new Media(src, null, mediaError);
+    media.setVolume(1.0);
+    media.play();
+    var media2 = new Media(mp3URL, null, mediaError);
+    media2.play();
+}
  
+function mediaError(e) {
+    alert('Media Error');
+    alert(JSON.stringify(e));
+}
 
 
 

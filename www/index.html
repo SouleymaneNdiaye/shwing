@@ -32,18 +32,31 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>Hello World</title>
+        <title>Shwing</title>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+         <!--<script type="text/javascript" charset="utf-8" src="./js/jquery.mobile-1.4.5.min.js"></script>-->
+        <script type="text/javascript" charset="utf-8" src="./js/init.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./js/index.js"></script>
+
     </head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            if ($.mobile) {
+                alert("jQuery Mobile is loaded");
+            }
+        })
+    </script>
     <body class="app">
         <header class="header">
             Shwing v0
         </header>
-        <button id="shwing" class="btn" onclick="playMP3('assets/www/sounds/shwing.mp3')">
+        <button id="shwing" class="btn">
             Shwing
         </button>
-        <button id="shwing" class="btn-primary" onclick="showAlert()">
-            Shwing
-        </button>
+        <a href="#" id="shwing-alert" class="btn-primary hidden">
+            Show Alert
+        </a>
     </body>
- <script type="text/javascript" src="js/index.js"></script>
 </html>

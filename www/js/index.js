@@ -1,24 +1,33 @@
 
-document.addEventListener('deviceready', onDeviceReady, false);
-
-function onDeviceReady() {
-   document.querySelector('#shwing').addEventListener("touchend", playMP3, false);
-};
-
-
-function playMP3(src) {
-    var mp3URL = "/assets/www/sounds/shwing.mp3";
-    var media = new Media(src, null, mediaError);
+$("#shwing").on('touchstart click',function(){
+    e.preventDefault();
+    alert("ceci est une alerte");
+});
+  function playMP3(src) {
+    dialogAlert();
+    var media = new Media("/android_asset/www/sounds/shwing.mp3", null, mediaError);
     media.setVolume(1.0);
-    media.play();
-    var media2 = new Media(mp3URL, null, mediaError);
-    media2.play();
+    // media.play();
 }
  
 function mediaError(e) {
-    alert('Media Error');
-    alert(JSON.stringify(e));
+  alert("code= "+ e.code +" message: " +e.message);
 }
+
+function dialogAlert() {
+    console.log("dialog");
+   var message = "I am Alert Dialog!";
+   var title = "ALERT";
+   var buttonName = "Alert Button";
+   navigator.notification.alert(message, alertCallback, title, buttonName);
+   
+   function alertCallback() {
+      console.log("Alert is Dismissed!");
+   }
+
+
+}
+
 
 
 

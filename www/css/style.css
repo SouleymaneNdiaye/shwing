@@ -28,6 +28,7 @@ body{
     text-decoration: none;
     border-radius: 8px;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .btn-primary{
@@ -44,4 +45,5 @@ body{
     text-decoration: none;
     border-radius: 8px;
     font-size: 16px;
+    cursor: pointer;
 }

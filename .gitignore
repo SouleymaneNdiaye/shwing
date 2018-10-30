@@ -8,3 +8,5 @@ platforms/
 res/
 
 plugins/
+
+.idea/

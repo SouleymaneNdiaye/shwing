@@ -1,33 +1,54 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+var app = {
 
-$("#shwing").on('touchstart click',function(){
-    e.preventDefault();
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    bindEvents:function (){
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    onDeviceReady: function() {
+        var counter=0;
+        document.getElementById("shwing").addEventListener("click",function () {
+            shwing();
+            counter ++;
+            document.getElementById("counter").innerHTML= counter;
+        });
+        document.getElementById("shwing").addEventListener("click",updateCounter);
+    },
+
+};
+app.initialize();
+showAlert=function () {
     alert("ceci est une alerte");
-});
-  function playMP3(src) {
-    dialogAlert();
-    var media = new Media("/android_asset/www/sounds/shwing.mp3", null, mediaError);
-    media.setVolume(1.0);
-    // media.play();
-}
- 
-function mediaError(e) {
-  alert("code= "+ e.code +" message: " +e.message);
-}
+};
 
-function dialogAlert() {
-    console.log("dialog");
-   var message = "I am Alert Dialog!";
-   var title = "ALERT";
-   var buttonName = "Alert Button";
-   navigator.notification.alert(message, alertCallback, title, buttonName);
-   
-   function alertCallback() {
-      console.log("Alert is Dismissed!");
-   }
+shwing=function () {
+    media = new Media("/android_asset/www/sounds/shwing.mp3", null);
+    media.setVolume(0.5);
+    media.play();
+};
 
+updateCounter = function () {
 
 }
-
-
 
 

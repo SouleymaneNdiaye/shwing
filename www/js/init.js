@@ -19,30 +19,27 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), true);
+        this.bindEvents();
+    },
+    bindEvents:function (){
+        document.addEventListener('deviceready', this.onDeviceReady, false);
     },
 
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        alert("i m ready");
-
-        // $("#shwing-alert").innerHTML('yow');
-        //
-        // $("#shwing").click(function(){
-        //     alert("ceci est une alerte");
-        // });
-        $("#shwing-alert").button('enable');
-        $("#shwing-alert").click(function (e) {
-            e.preventDefault();
-            alert("ceci est une alerte");
-
-        });
+        document.getElementById("shwing").addEventListener("click",shwing);
     },
 
 };
 app.initialize();
+
+showAlert=function () {
+    alert("ceci est une alerte");
+};
+
+shwing=function () {
+    media = new Media("/android_asset/www/sounds/shwing.mp3", null);
+    media.setVolume(1.0);
+    media.play();
+};
 
 
